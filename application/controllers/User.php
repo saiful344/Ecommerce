@@ -7,7 +7,12 @@ class User extends CI_Controller{
 		$this->load->model('M_Barang');
 	}
 	function index(){
-		$data['content']=$this->M_Barang->ambil('barang');
+        $data['active']="active";
+        $data['active2']="";
+        $data['active3']="";
+        $data['active4']="";
+		$data['content']=$this->M_Barang->baru('barang',4);
+        $data['content_2']=$this->M_Barang->ambil_2('barang',4);
 		$this->template->user_2('user_2/index',$data);
 	}
 	public function add_cart()
@@ -28,9 +33,13 @@ class User extends CI_Controller{
         redirect('User');
     }
     public function cart()
-    {
+    {           
+        $data['active']="";
+        $data['active2']="";
+        $data['active3']="";
+        $data['active4']="";
         //print_r($this->cart->contents());
-        $this->template->user_2('user_2/cart');
+        $this->template->user_2('user_2/cart',$data);
     }
     public function cart_trash()
     {
@@ -38,6 +47,10 @@ class User extends CI_Controller{
         redirect('User/cart');
     }
     public function detail(){
+        $data['active']="";
+        $data['active2']="";
+        $data['active3']="";
+        $data['active4']="";
     	$id=$this->uri->segment(3);
     	$data['content']=$this->M_Barang->show_by_id('barang',$id);
         $this->template->user_2('user_2/detail',$data);
@@ -71,7 +84,11 @@ class User extends CI_Controller{
         redirect('User/cart');
     }
     function payment(){
-         $this->template->user_2('user_2/payment');
+            $data['active']="";
+        $data['active2']="";
+        $data['active3']="";
+        $data['active4']="";
+         $this->template->user_2('user_2/payment',$data);
     }
     function _api_ongkir_post($origin,$qty,$des,$cour)
     {
@@ -184,5 +201,30 @@ class User extends CI_Controller{
         } else {
             echo "Bang nggak punya uang ya nabung dong";
         }
+    }
+    function kategori(){
+        $data['active']="";
+        $data['active2']="";
+        $data['active3']="active";
+        $data['active4']="";
+        $data['content']=$this->M_Barang->ambil('kategori');
+        $this->template->user_2('user_2/kategori',$data);
+    }
+    function list($id){
+        $data['active']="";
+        $data['active2']="";
+        $data['active3']="active";
+        $data['active4']="";
+        $data['id']     =$id;
+        $data['content']=$this->M_Barang->det_list($id);
+        $this->template->user_2('user_2/tampil',$data);
+    }
+    function tampil_all(){
+        $data['active']="active";
+        $data['active2']="";
+        $data['active3']="";
+        $data['active4']="";
+        $data['content']=$this->M_Barang->ambil('barang');
+        $this->template->user_2('user_2/tampil_all',$data);
     }
 }

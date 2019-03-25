@@ -84,7 +84,7 @@
 								<div class="product_reviews">4.7(5665665)</div>
 								<div class="product_reviews_link"><a href="#">Reviews</a></div>
 							</div>
-							<div class="product_price">$ <?= $content['harga'] ?> </div>
+							<div class="product_price">Rp. <?= $content['harga'] ?> </div>
 							<div class="product_size">
 								<div class="product_size_title mt-3">Select Size</div>
 								<ul class="d-flex flex-row align-items-start justify-content-start">

@@ -90,11 +90,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> <i cl
 <script src="<?= base_url() ?>assets/user_2/plugins/parallax-js-master/parallax.min.js"></script>
 <script src="<?= base_url() ?>assets/user_2/js/custom.js"></script>
 <script type="text/javascript">
+  $('.carousel').carousel()
+</script>
+<script type="text/javascript">
   $(document).ready(function(){
     $(".ipul").hover(function(){
     $(this).attr('class','card m-3  shadow bg-white rounded');
   },function(){
     $(this).attr('class','card m-3');
+  });
+  $(".ipul_2").hover(function(){
+    $(this).attr('class','card   shadow bg-white rounded');
+  },function(){
+    $(this).attr('class','card');
   });
 });
 </script>

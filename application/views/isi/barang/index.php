@@ -43,7 +43,10 @@
                   <td><?= $b->harga ?></td>
                   <td><?= $b->tgl ?></td>
                   <td><img src="<?= base_url()?>assets/images/<?= $b->foto ?>" width="50"></td>
-                  <td><a class="btn" href="<?= site_url("Admin/edit/").$b->id ?>">Hapus</a><a class="btn" href="<?= site_url("Admin/hapus/").$b->id ?>">Edit</a></td>
+                  <td>
+                      <a  href="<?= site_url("Admin/edit/").$b->id ?>" class="btn btn-primary">Edit</a>
+                      <a href="<?= site_url("Admin/hapus/").$b->id ?>" class="btn btn-danger">Hapus</a>
+                  </td>
                 </tr>
               <?php endforeach ?>
                 </tbody>

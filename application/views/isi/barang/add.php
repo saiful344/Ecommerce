@@ -32,21 +32,30 @@
               <div class="form-group">
                 <label>Nama</label>
                 <input type="text" class="form-control" name="nama">
+                <?= form_error('nama');?>
               </div>
               <!-- /.form-group -->
               <div class="form-group">
                 <label>Jumlah</label>
                 <input type="number" class="form-control" name="jumlah" placeholder="jumlah barang">
+
               </div>
               <!-- /.form-group -->
                <div class="form-group">
                 <label>Haraga</label>
-                <input type="number" class="form-control" name="harga" placeholder="Rp.....">
+                <input type="text" class="form-control" name="harga" id="rupiah" placeholder="Rp.....">
+                <?= form_error('harga');?>
               </div>
               <!-- /.form-group -->
                <div class="form-group">
                 <label>Jenis</label>
-                <input type="text" class="form-control" name="jenis" placeholder="Jenis barang">
+                <select class="form-control" name="jenis">
+                  <option value="">Choice--</option>
+                  <?php foreach ($content as $k) :?>
+                    <option value="<?= $k->nama ?>"><?= $k->nama ?></option>
+                  <?php endforeach ?>
+                </select>
+                <?= form_error('jenis');?>
               </div>
               <!-- /.form-group -->
             </div>
@@ -59,7 +68,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="date" type="yy-mm-dddd" class="form-control pull-right" id="datepicker" name="date">
+                  <input type="text" type="yy-mm-dddd" class="form-control pull-right" id="datepicker" name="date">
                 </div>
                 <!-- /.input group -->
               </div>
@@ -77,7 +86,8 @@
                         <!-- /.form-group -->
               <div class="form-group">
                 <label>Berat</label>
-                <input type="number" name="berat" class="form-control" placeholder="....gram">
+                <input type="number" min="0" name="berat" class="form-control" placeholder="....gram">
+                <?= form_error('berat');?>
               </div>
               <!-- /.form-group -->
                         <!-- /.form-group -->
@@ -114,11 +124,13 @@
                           style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" name="deskripsi"></textarea>
               </form>
             </div>
+            <?= form_error('deskripsi');?>
           </div>
         <!-- /.box-body -->
                         <div>
-                      <button type="submit" class="btn btn-outline-info btn-fw float-right m-3">
+                      <button type="submit" class="btn btn-outline-info btn-fw float-right" style="float:right; margin-right: 20px;">
                           <i class="mdi mdi-upload"></i>Upload</button>
+                          <div class="clearfix"></div>
                           <?= $error ?>
                      </div>
       </form>

@@ -22,15 +22,16 @@
   <div class="container justify-content-center">
     <div class="login col-md-5   shadow p-3 mb-5 bg-white rounded">
     <form method="post">
-      <h5 style="margin-left: 37%;">Thing~baby</h5>
+
+      <h5 style="border-bottom:1px solid #2fce98 " class="mb-5"><img src="<?= base_url() ?>assets/user_2/images/logo_1.png" alt="">Thing~baby</h5>
+        
       <div class="form-group">
-        <label for="exampleInputEmail1">Username</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">Input your username for login</small>
+        <label for="exampleInputEmail1"><img src="<?= base_url() ?>assets/user_2/images/user.svg" alt="https://www.flaticon.com/authors/freepik" width="55"></label>
+        <input type="text" class="form-control float-right col-md-9 mt-3 mr-4" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="Enter email">
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+  <div class="form-group">
+        <label for="password"><img src="<?= base_url() ?>assets/user_2/images/user.svg" alt="https://www.flaticon.com/authors/freepik" width="55"></label>
+        <input type="password" class="form-control float-right col-md-9 mt-3 mr-4" id="password" aria-describedby="emailHelp" name="username" placeholder="*********">
       </div>
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">

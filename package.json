@@ -1,0 +1,26 @@
+{
+  "name": "toko",
+  "version": "1.0.0",
+  "description": "ecommerce chat",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saiful344/Ecommerce.git"
+  },
+  "author": "saiful",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saiful344/Ecommerce/issues"
+  },
+  "homepage": "https://github.com/saiful344/Ecommerce#readme",
+  "dependencies": {
+    "socket.io": "*",
+    "express": "*"
+  }
+}

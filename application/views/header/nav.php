@@ -303,14 +303,14 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Forms</span>
+            <i class="fa fa-edit"></i> <span>Users</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-             <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i>Admin</a></li>
-            <li><a href="<?= site_url("Admin/barang");?>"><i class="fa fa-circle-o"></i> User</a></li>
+             <li><a href="<?= site_url("Admin/admin");?>"><i class="fa fa-circle-o"></i>Admin</a></li>
+            <li><a href="<?= site_url("Admin/user");?>"><i class="fa fa-circle-o"></i> User</a></li>
           </ul>
         </li>
         <li class="treeview">

@@ -4,6 +4,11 @@ class M_Barang extends CI_Model{
 	public function ambil($table){
 		return $this->db->get($table)->result();
 	}
+	public function ambil_2($table,$limit){
+		$this->db->from($table);
+		$this->db->limit($limit);
+		return $this->db->get()->result();
+	}
 	public function news_top($table){
 		 $this->db->from($table);
 		 $this->db->limit(4);
@@ -107,7 +112,24 @@ class M_Barang extends CI_Model{
 		}
 
 	}
+	function ambil_user($level){
+		$this->db->where('level',$level);
+		return $this->db->get('user')->result();
+	}
 	// function ambil(){
 	// 	$this->db->get('i.*SUM(o.qty * b.harga) as  hasil')
 	// }
+
+	// user tampil
+
+	function baru($table,$limit){
+		$this->db->from($table);
+		$this->db->order_by('tgl');
+		$this->db->limit($limit);
+		return $this->db->get()->result();
+	}
+	function det_list($id){
+		$this->db->where('jenis',$id);
+		return $this->db->get('barang')->result();
+	}
 }
